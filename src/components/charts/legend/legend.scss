@@ -1,0 +1,97 @@
+// shorter height by half a line, so table body is cut off,
+// suggesting there's more to scroll
+$legend-body-h: $gl-spacing-scale-13 - $gl-spacing-scale-4;
+
+.gl-legend {
+  position: relative;
+}
+
+.gl-chart-h-auto {
+  .gl-legend-inline {
+      // match the height of gl-legend-tabular (header + body)
+      max-height: $gl-line-height-24 + $legend-body-h;
+      @include gl-overflow-auto;
+  }
+}
+
+.gl-legend-tabular,
+.gl-chart-h-auto .gl-legend-inline {
+  &::after {
+    background-image: linear-gradient(to bottom, $transparent-rgba, var(--white, #{$white}));
+    bottom: 0;
+    content: '';
+    @include gl-display-block;
+    @include gl-h-4;
+    position: absolute;
+    @include gl-w-full;
+  }
+}
+
+.gl-legend-inline {
+    @include gl-display-flex;
+    @include gl-flex-wrap;
+    @include gl-flex-shrink-0;
+
+  .gl-legend-inline-series {
+    @include gl-display-flex;
+    @include gl-flex-shrink-0;
+    @include gl-justify-content-space-between;
+    @include gl-align-items-center;
+    @include gl-pr-5;
+
+    &:hover {
+      @include gl-cursor-pointer;
+      @include gl-text-decoration-underline;
+    }
+
+    .gl-legend-inline-series-label {
+      @include gl-mr-3;
+    }
+  }
+}
+
+.gl-legend-tabular {
+  .gl-legend-tabular-header {
+    @include gl-display-flex;
+    @include gl-justify-content-end;
+  }
+
+  .gl-legend-tabular-header-cell,
+  .gl-legend-tabular-details-cell {
+    @include gl-white-space-nowrap;
+    @include gl-overflow-hidden;
+    @include gl-text-overflow-ellipsis;
+    @include gl-text-right;
+    @include gl-w-eighth;
+  }
+
+  .gl-legend-tabular-header-cell {
+    @include gl-font-weight-bold;
+    @include gl-line-height-24;
+    @include gl-px-3;
+  }
+
+  .gl-legend-tabular-body {
+    height: $legend-body-h;
+    @include gl-overflow-y-auto;
+  }
+
+  .gl-legend-tabular-row {
+    @include gl-display-flex;
+    
+    &:nth-child(odd) {
+      background-color: var(--gray-50, #{$gray-50});
+    }
+  }
+
+  .gl-legend-tabular-title-cell,
+  .gl-legend-tabular-details-cell {
+    @include gl-line-height-24;
+    @include gl-px-3;
+  }
+
+  .gl-legend-tabular-title-cell {
+    @include gl-overflow-hidden;
+    @include gl-w-half;
+  }
+}

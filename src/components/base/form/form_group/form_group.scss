@@ -1,0 +1,46 @@
+.gl-form-group {
+  @include gl-mb-5;
+
+  .col-form-label {
+    @include gl-font-base;
+    @include gl-font-weight-bold;
+    @include gl-line-height-normal;
+    @include gl-pt-0;
+    @include gl-pb-3;
+
+    > .label-description {
+      @include gl-mt-3;
+    }
+  }
+
+  .optional-label,
+  .label-description {
+    @include gl-font-weight-normal;
+  }
+
+  .invalid-feedback,
+  .valid-feedback,
+  .text-gl-muted {
+    @include gl-font-base;
+    @include gl-line-height-normal;
+  }
+
+  .form-control {
+    + .invalid-feedback,
+    + .valid-feedback,
+    + .text-gl-muted,
+    &.is-valid + .invalid-feedback + .text-gl-muted {
+      // See https://gitlab.com/gitlab-org/gitlab-ui/-/merge_requests/2806
+      // for the reasoning behind the "valid+invalid" selector above
+      @include gl-mt-3;
+    }
+  }
+
+  .text-gl-muted {
+    @include gl-text-gray-500;
+  }
+
+  legend {
+    border-bottom: 0;
+  }
+}

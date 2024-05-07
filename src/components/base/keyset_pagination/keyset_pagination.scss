@@ -1,0 +1,16 @@
+.gl-keyset-pagination {
+  // See https://gitlab.com/gitlab-org/gitlab-ui/-/merge_requests/1487
+  // for the reasoning behind the double .gl-button.gl-button
+  .gl-button.gl-button {
+    .gl-icon {
+      @include gl-m-0;
+    }
+
+    &.disabled,
+    &[disabled] {
+      .gl-icon {
+        @include gl-text-gray-400;
+      }
+    }
+  }
+}

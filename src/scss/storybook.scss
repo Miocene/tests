@@ -1,0 +1,30 @@
+@import 'tokens';
+
+@tailwind utilities;
+
+@import 'functions';
+@import 'variables';
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+@import 'bootstrap_vue';
+
+@import 'mixins';
+@import 'utility-mixins/index';
+@import 'utilities';
+
+@import 'fonts';
+
+@import 'components';
+
+@import 'storybook_dark_mode';
+
+/**
+ * Custom padding for docs pages. This improves the integration in Pajamas pages.
+ */
+.sbdocs-wrapper {
+  padding-top: $gl-spacing-scale-2 !important;
+  padding-bottom: 0 !important;
+}

@@ -1,0 +1,123 @@
+/*
+ * --gl-alert-padding-x
+ *
+ * Way to hook into spacing of gl-alert.
+ * This is used e.g. for page wide containers
+ * in GitLab.
+ */
+// stylelint-disable length-zero-no-unit
+$gl-alert-padding-x: var(--gl-alert-padding-x, 0px);
+
+.gl-alert {
+  @include gl-font-base;
+  position: relative;
+  padding-inline: calc(#{$gl-spacing-scale-9} + #{$gl-alert-padding-x});
+  @include gl-py-5;
+
+  &-not-dismissible {
+    padding-right: calc(#{$gl-spacing-scale-5} + #{$gl-alert-padding-x});
+  }
+
+  &-no-icon {
+    padding-left: calc(#{$gl-spacing-scale-5} + #{$gl-alert-padding-x});
+  }
+
+  .gl-link:not(.gl-label-link) {
+    @include gl-text-blue-600;
+    @include gl-text-decoration-underline;
+
+    &:hover {
+      @include gl-text-blue-700;
+    }
+  }
+}
+
+.gl-alert-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.gl-alert-title {
+  @include gl-heading-scale-500;
+  @include gl-mb-3;
+}
+
+.gl-alert-icon-container {
+  position: absolute;
+  top: $gl-spacing-scale-5;
+  left: calc(#{$gl-spacing-scale-5} + #{$gl-alert-padding-x});
+  @include gl-display-flex;
+  @include gl-align-items-center;
+  height: $gl-line-height-20;
+
+  .gl-alert-has-title & {
+    @include gl-heading-scale-500; // get dynamic font-size
+    height: $gl-line-height-heading * 1em; // give unit to unitless relative line-height (1.25)
+  }
+}
+
+.gl-alert-icon {
+  @include gl-fill-current-color;
+}
+
+.gl-alert-body {
+  @include gl-line-height-20;
+}
+
+.gl-alert-actions {
+  @include gl-display-flex;
+  @include gl-mt-5;
+}
+
+.gl-alert-action {
+  @include gl-mr-3;
+  @include gl-font-base;
+  @include gl-line-height-normal;
+}
+
+// This is the replacement for .gl-alert-dismiss
+.gl-dismiss-btn {
+  position: absolute;
+  top: $gl-spacing-scale-4;
+  right: calc(#{$gl-spacing-scale-4} + #{$gl-alert-padding-x});
+}
+
+.gl-alert-danger {
+  @include gl-bg-red-50;
+
+  .gl-alert-icon {
+    @include gl-text-red-600;
+  }
+}
+
+.gl-alert-warning {
+  @include gl-bg-orange-50;
+
+  .gl-alert-icon {
+    @include gl-text-orange-600;
+  }
+}
+
+.gl-alert-tip {
+  @include gl-bg-gray-50;
+
+  .gl-alert-icon {
+    @include gl-text-gray-600;
+  }
+}
+
+.gl-alert-info {
+  @include gl-bg-blue-50;
+
+  .gl-alert-icon {
+    @include gl-text-blue-600;
+  }
+}
+
+.gl-alert-success {
+  @include gl-bg-green-50;
+
+  .gl-alert-icon {
+    @include gl-text-green-600;
+  }
+}

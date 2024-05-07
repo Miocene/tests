@@ -1,0 +1,7 @@
+.gl-heatmap {
+  position: relative;
+
+  .gl-legend-inline-series {
+    @include gl-pointer-events-none;
+  }
+}

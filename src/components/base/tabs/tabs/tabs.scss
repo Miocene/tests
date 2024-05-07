@@ -1,0 +1,125 @@
+.gl-tabs-nav {
+  @include gl-border-solid;
+  @include gl-border-gray-100;
+  @include gl-border-0;
+  @include gl-border-b-1;
+}
+
+.gl-tab-nav-item {
+  @include gl-text-gray-900;
+  @include gl-px-4;
+  @include gl-py-5;
+  @include gl-line-height-normal;
+  @include gl-font-base;
+  @include gl-display-flex;
+  @include gl-justify-content-center;
+  @include gl-overflow-hidden;
+
+  transition: box-shadow 100ms linear;
+
+  &:hover {
+    @include gl-text-gray-900;
+
+    &:not(.gl-tab-nav-item-active) {
+      @include gl-inset-border-b-2-gray-200;
+    }
+  }
+
+  &.disabled {
+    @include gl-pointer-events-auto;
+    @include gl-cursor-not-allowed;
+    @include gl-text-gray-400;
+
+    &:hover {
+      @include gl-shadow-none;
+    }
+  }
+
+  > .gl-tab-counter-badge {
+    font-weight: inherit;
+    @include gl-ml-2;
+  }
+}
+
+.gl-tab-content {
+  @include gl-py-3;
+  @include gl-font-base;
+  @include gl-line-height-normal;
+  @include gl-text-gray-900;
+}
+
+.gl-tab-nav-item-active {
+  @include gl-font-weight-bold;
+  @include gl-text-gray-900;
+  @include gl-inset-border-b-2-blue-500;
+
+  &:active,
+  &:focus,
+  &:focus:active {
+    box-shadow: inset 0 -#{$gl-border-size-2} 0 0 $blue-500, $focus-ring;
+    @include gl-outline-none;
+  }
+}
+
+.gl-actions-tabs-start {
+  @include gl-w-full;
+  @include gl-display-flex;
+  @include gl-flex-direction-column;
+  @include gl-mt-3;
+  @include gl-md-display-none;
+}
+
+.gl-actions-tabs-end {
+  @include gl-display-none;
+  @include gl-flex-grow-1;
+  @include gl-justify-content-end;
+  @include gl-align-items-center;
+  @include gl-flex-direction-row;
+  @include gl-mt-0;
+  @include gl-md-display-flex;
+}
+
+.gl-actions-tabs-start,
+.gl-actions-tabs-end {
+  button {
+    @include gl-mb-3;
+    @include gl-md-mr-3;
+    @include gl-md-mb-0;
+  }
+
+  button:last-child {
+    @include gl-m-0;
+  }
+}
+
+.gl-tabs-fade {
+  @include gl-w-8;
+  bottom: 0;
+  position: sticky;
+  @include gl-text-gray-500;
+  @include gl-p-2;
+}
+
+.gl-tabs-fade-left {
+  left: 0;
+  @include gl-bg-gradient-blur(left, $white);
+}
+
+.gl-tabs-fade-right {
+  right: 0;
+  @include gl-bg-gradient-blur(right, $white);
+}
+
+.gl-tabs-fade-icon-button {
+  @include gl-bg-transparent;
+  @include gl-border-none;
+  @include gl-p-0;
+  @include gl-text-gray-400;
+  @include gl-h-full;
+}
+
+.gl-scrollable-tabs-nav {
+  @include gl-overflow-hidden;
+  position: relative;
+  @include gl-flex-nowrap;
+}

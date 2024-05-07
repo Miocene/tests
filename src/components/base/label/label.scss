@@ -1,0 +1,176 @@
+$label-max-width: 100%;
+$label-close-button: '.gl-label-close.gl-button';
+
+.gl-label {
+  @include gl-align-items-center;
+  @include gl-bg-white;
+  @include gl-overflow-hidden;
+  @include gl-display-inline-flex;
+  @include gl-rounded-pill;
+  position: relative;
+  @include gl-max-w-full;
+  @include gl-font-sm;
+  @include gl-line-height-normal;
+  box-shadow: var(--label-inset-border) !important;
+
+  &:not(.gl-label-scoped) {
+    background-color: var(--label-background-color);
+  }
+
+  &:has(*:first-child:focus) {
+    @include gl-focus($color: var(--label-background-color, $white), $important: true);
+  }
+
+  .gl-label-link {
+    @include gl-display-flex;
+    @include gl-font-weight-normal;
+    @include gl-overflow-hidden;
+    @include gl-reset-color;
+    @include gl-max-w-full;
+    @include gl-text-decoration-none;
+
+    &:focus,
+    &:hover,
+    &:focus:active {
+      @include gl-reset-color;
+      @include gl-shadow-none;
+      @include gl-outline-none;
+    }
+  }
+
+  .gl-label-text,
+  .gl-label-text-scoped {
+    @include gl-display-block;
+    padding: $gl-spacing-scale-1 #{$gl-spacing-scale-3 - $gl-spacing-scale-1};
+    @include str-truncated($label-max-width);
+  }
+
+  > #{$label-close-button} {
+    @include gl-border-0;
+    @include gl-display-flex;
+    width: px-to-rem(14px);
+    height: px-to-rem(14px);
+    margin-left: #{-$gl-spacing-scale-1 - ($gl-spacing-scale-1 / 2)};
+    margin-right: #{$gl-spacing-scale-2 - ($gl-spacing-scale-1 / 2)};
+    @include gl-p-0;
+    @include gl-rounded-full;
+    @include gl-shadow-none;
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus {
+      @include gl-opacity-5;
+      @include gl-reset-bg;
+      @include gl-shadow-none;
+
+      .gl-icon {
+        @include gl-fill-current-color;
+      }
+    }
+
+    &:focus,
+    &:active {
+      @include gl-focus;
+    }
+
+    .gl-icon {
+      vertical-align: -1px;
+    }
+  }
+}
+
+.gl-label-text-dark {
+  @include gl-text-gray-950;
+
+  #{$label-close-button} {
+    .gl-icon,
+    &[disabled] .gl-icon,
+    &[disabled]:hover .gl-icon,
+    &[disabled]:focus .gl-icon {
+      @include gl-text-black-normal;
+    }
+
+    &:focus,
+    &:hover {
+      @include gl-bg-black;
+
+      .gl-icon {
+        color: var(--label-background-color);
+      }
+    }
+  }
+}
+
+.gl-label-text-light {
+  @include gl-text-white;
+
+  #{$label-close-button} {
+    .gl-icon,
+    &[disabled] .gl-icon,
+    &[disabled]:hover .gl-icon,
+    &[disabled]:focus .gl-icon {
+      @include gl-text-white;
+    }
+
+    &:focus,
+    &:hover {
+      @include gl-bg-white;
+
+      .gl-icon {
+        color: var(--label-background-color);
+      }
+    }
+  }
+}
+
+.gl-label-scoped {
+  &.gl-label-text-light {
+    #{$label-close-button} .gl-icon,
+    #{$label-close-button}[disabled]:hover .gl-icon {
+      color: var(--label-background-color);
+    }
+
+    #{$label-close-button}:not(:disabled) {
+      &:focus,
+      &:hover {
+        background-color: var(--label-background-color);
+      }
+    }
+  }
+
+  &.gl-label-text-dark {
+    #{$label-close-button}:not(:disabled) {
+      &:focus,
+      &:hover {
+        @include gl-bg-black;
+      }
+    }
+  }
+
+  #{$label-close-button} {
+    margin-left: #{-$gl-spacing-scale-2 - $gl-spacing-scale-1};
+
+    &:focus,
+    &:hover {
+      .gl-icon {
+        @include gl-text-white;
+      }
+    }
+  }
+
+  .gl-label-text {
+    background-color: var(--label-background-color);
+  }
+
+  .gl-label-text-scoped {
+    @include gl-text-gray-950;
+    padding-left: #{$gl-spacing-scale-3 - $gl-spacing-scale-2};
+    padding-right: $gl-spacing-scale-3;
+  }
+}
+
+.gl-label-tooltip-title {
+  @include gl-display-block;
+  @include gl-text-theme-indigo-300;
+  @include gl-font-weight-bold;
+}

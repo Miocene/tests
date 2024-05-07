@@ -1,0 +1,63 @@
+.gl-form-input,
+.gl-form-input.form-control {
+  @include gl-bg-white;
+  @include gl-font-regular;
+  @include gl-font-base;
+  @include gl-line-height-normal;
+  @include gl-py-3;
+  @include gl-px-4;
+  @include gl-h-auto;
+  @include gl-text-gray-900;
+  @include gl-inset-border-1-gray-400;
+  @include gl-border-none;
+  @include form-control-focus($ignore-warning: true);
+  appearance: none;
+
+  &:disabled,
+  &:not(.form-control-plaintext):not([type='color']):read-only {
+    @include gl-bg-gray-10;
+    @include gl-inset-border-1-gray-100;
+  }
+
+  &:disabled {
+    @include gl-cursor-not-allowed;
+    @include gl-text-gray-500;
+  }
+
+  &:not(.form-control-plaintext):focus {
+    @include gl-focus($color: $gray-900);
+    @include gl-text-gray-900;
+  }
+
+  &.is-invalid {
+    @include gl-inset-border-1-red-500;
+
+    &:focus {
+      @include gl-focus($color: $red-500);
+    }
+  }
+
+  &::placeholder {
+    @include gl-text-gray-400;
+  }
+
+  &.form-control-plaintext {
+    @include gl-shadow-none;
+  }
+}
+
+@each $name, $size in $gl-form-input-sizes {
+  .gl-form-input-#{$name} {
+    max-width: $size;
+  }
+
+  @each $breakpointName, $breakpointSize in $gl-form-input-sizes {
+    @if $breakpointName != xs {
+      .gl-#{$breakpointName}-form-input-#{$name} {
+        @include gl-media-breakpoint-up($breakpointName) {
+          max-width: $size;
+        }
+      }
+    }
+  }
+}

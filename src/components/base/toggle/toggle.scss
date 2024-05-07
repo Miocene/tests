@@ -1,0 +1,157 @@
+/**
+* Toggle button
+*
+* @usage
+*  ### Active and Inactive text should be provided as data attributes:
+*  <button type="button" class="project-feature-toggle" data-enabled-text="Enabled" data-disabled-text="Disabled">
+*  <i class="fa fa-spinner fa-spin loading-icon hidden"></i>
+*  </button>
+
+*  ### Checked should have `is-checked` class
+*  <button type="button" class="project-feature-toggle is-checked" data-enabled-text="Enabled" data-disabled-text="Disabled">
+*  <i class="fa fa-spinner fa-spin loading-icon hidden"></i>
+*  </button>
+
+*  ### Disabled should have `is-disabled` class
+*  <button type="button" class="project-feature-toggle is-disabled" data-enabled-text="Enabled" data-disabled-text="Disabled" disabled="true">
+*  <i class="fa fa-spinner fa-spin loading-icon hidden"></i>
+*  </button>
+*/
+
+.gl-toggle-wrapper {
+  @include gl-line-height-normal;
+  @include gl-font-weight-normal;
+  @include gl-display-inline-flex;
+
+  &.is-disabled {
+    @include gl-cursor-not-allowed;
+
+    .gl-toggle {
+      @include gl-cursor-not-allowed;
+      @include gl-bg-gray-200;
+
+      .toggle-icon > svg {
+        @include gl-fill-gray-200;
+      }
+    }
+
+    .gl-toggle.is-checked {
+      @include gl-bg-blue-200;
+
+      .toggle-icon > svg {
+        @include gl-fill-blue-200;
+      }
+    }
+
+    .gl-toggle-label,
+    .gl-description-label {
+      @include gl-text-gray-500;
+    }
+  }
+}
+
+.gl-help-label {
+  @include gl-mt-3;
+  @include gl-text-gray-500;
+  @include gl-font-weight-normal;
+}
+
+.gl-toggle-label-inline {
+  @include gl-flex-direction-row;
+  @include gl-align-items-center;
+
+  .gl-toggle-label {
+    @include gl-white-space-nowrap;
+    @include gl-mb-0;
+    @include gl-mr-3;
+  }
+
+  .gl-help-label {
+    @include gl-mt-0;
+    @include gl-ml-3;
+  }
+}
+
+.gl-toggle-label {
+  @include gl-font-weight-bold;
+}
+
+.gl-toggle {
+  @include gl-display-inline-flex;
+  @include gl-align-items-center;
+  @include gl-justify-content-center;
+  @include gl-border-0;
+  @include gl-cursor-pointer;
+  @include gl-bg-gray-600;
+  @include gl-p-1;
+  position: relative;
+  @include gl-w-9;
+  @include gl-h-6;
+  @include gl-outline-none;
+  user-select: none;
+  @include gl-rounded-pill;
+  @include gl-transition-slow;
+  @include gl-line-height-normal;
+
+  &::selection,
+  &::before::selection,
+  &::after::selection {
+    @include gl-bg-none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus:active {
+    @include gl-bg-gray-700;
+  }
+
+  &:active,
+  &:focus,
+  &:focus:active {
+    @include gl-focus;
+  }
+
+  .toggle-loading {
+    @include gl-h-5;
+  }
+
+  .toggle-icon {
+    @include gl-rounded-full;
+    @include gl-bg-white;
+    position: absolute;
+    @include gl-display-inline-flex;
+    @include gl-align-items-center;
+    left: $gl-spacing-scale-1;
+    top: $gl-spacing-scale-1;
+    @include gl-transition-medium;
+    @include gl-justify-content-center;
+    @include gl-p-1;
+
+    > svg {
+      @include gl-w-5;
+      @include gl-h-5;
+      @include gl-fill-gray-400;
+      @include gl-vertical-align-baseline;
+    }
+  }
+
+  &.is-checked {
+    @include gl-bg-blue-500;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus:active {
+      @include gl-bg-blue-600;
+    }
+
+    .toggle-icon {
+      transform: translateX($gl-spacing-scale-6);
+
+      > svg {
+        @include gl-fill-blue-500;
+      }
+    }
+  }
+}

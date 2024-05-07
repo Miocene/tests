@@ -1,0 +1,17 @@
+[GitLab UI]
+* @gitlab-org/maintainers/gitlab-ui
+
+^[Charts]
+src/components/charts @svedova
+
+[CSS]
+*.scss @rayana @tauriedavis @gitlab-org/maintainers/gitlab-ui
+
+^[Technical Writing]
+doc/ @rdickenson
+
+[UX]
+/tests/__image_snapshots__/ @gitlab-com/gitlab-ux/designers
+
+[Duo Chat]
+src/components/experimental/duo @dmishunov @nicolasdular 

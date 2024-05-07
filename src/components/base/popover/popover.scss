@@ -1,0 +1,81 @@
+// variables
+// Popover max width 280px
+$gl-popover-max-width: $grid-size * 35;
+
+.gl-popover {
+  max-width: $gl-popover-max-width;
+  @include gl-border-1;
+  @include gl-border-solid;
+  @include gl-border-none;
+  @include gl-shadow;
+  @include gl-font-sm;
+
+  &,
+  .popover-body {
+    @include gl-text-gray-900;
+  }
+
+  &.bs-popover-top {
+    /* When popover position is top, the arrow is translated 1 pixel
+    *  due to the box-shadow include in our custom styles.
+    */
+    > .arrow::before {
+      bottom: 1px;
+    }
+
+    > .arrow::after {
+      bottom: 2px;
+    }
+  }
+
+  &.bs-popover-bottom {
+    > .arrow::before {
+      top: 1px;
+    }
+
+    > .arrow::after {
+      top: 2px;
+    }
+
+    > .popover-header::before {
+      @include gl-border-white;
+    }
+  }
+
+  &.bs-popover-right {
+    > .arrow::before {
+      left: 1px;
+    }
+
+    > .arrow::after {
+      left: 2px;
+    }
+  }
+
+  &.bs-popover-left {
+    > .arrow::before {
+      right: 1px;
+    }
+
+    > .arrow::after {
+      right: 2px;
+    }
+  }
+
+  .popover-header {
+    @include gl-heading-scale-200;
+    @include gl-bg-white;
+    @include gl-border-bottom-0;
+    @include gl-pb-0;
+  }
+
+  .popover-body {
+    @include gl-py-3;
+    @include gl-px-4;
+
+    > .popover-hr {
+      @include gl-my-5;
+      @include gl-mx-0;
+    }
+  }
+}

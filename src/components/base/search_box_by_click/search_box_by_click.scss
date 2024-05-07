@@ -1,0 +1,41 @@
+.gl-search-box-by-click {
+  @include gl-font-base;
+
+  .gl-search-box-by-click-history > button {
+    padding-left: $gl-spacing-scale-4 !important;
+    padding-right: $gl-spacing-scale-3 !important;
+    @include gl-border-none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    @include gl-inset-border-1-gray-400;
+  }
+
+  .gl-search-box-by-click-search-button {
+    @include gl-text-secondary;
+    @include gl-inset-border-1-gray-400;
+  }
+
+  .gl-search-box-by-click-input {
+    &::-webkit-search-cancel-button {
+      @include gl-display-none;
+    }
+  }
+
+  .gl-search-box-by-click-clear-button {
+    position: absolute;
+    top: $gl-spacing-scale-2;
+    right: $gl-spacing-scale-2;
+    @include gl-mr-2;
+    @include gl-z-index-3;
+  }
+}
+
+.gl-search-box-by-click-with-search-button {
+  .gl-search-box-by-click-input {
+    @include gl-pr-7;
+  }
+
+  .gl-search-box-by-click-clear-button {
+    right: $gl-spacing-scale-7;
+  }
+}

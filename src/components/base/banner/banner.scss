@@ -1,0 +1,29 @@
+.gl-banner-illustration {
+  @include gl-flex-shrink-0;
+  @include gl-mr-6;
+
+  img {
+    max-width: $grid-size * 15;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.gl-banner-title {
+  @include gl-heading-scale-500;
+  @include gl-mb-3;
+}
+
+.gl-banner-close {
+  position: absolute;
+  top: $gl-spacing-scale-3;
+  right: $gl-spacing-scale-3;
+}
+
+// Introduction variant
+.gl-banner-introduction {
+  @include gl-bg-blue-50;
+  @include gl-border-blue-300;
+}

@@ -1,0 +1,149 @@
+table.gl-table {
+  @include gl-bg-transparent;
+
+  tr {
+    th,
+    td {
+      @include gl-border-b-solid;
+      @include gl-border-b-1;
+      @include gl-border-gray-100;
+      @include gl-p-5;
+      @include gl-bg-transparent;
+      @include gl-line-height-normal;
+      @include gl-font-base;
+      @include gl-vertical-align-top;
+    }
+
+    th {
+      @include gl-font-weight-bold;
+      @include gl-text-gray-900;
+
+      &.gl-text-right > div {
+        flex-direction: row-reverse;
+
+        div.gl-ml-2 {
+          @include gl-ml-0;
+          @include gl-mr-2;
+        }
+      }
+
+      [name='sort-icon'] {
+        user-select: none;
+      }
+    }
+
+    td {
+      @include gl-text-gray-700;
+    }
+
+    &:focus-visible {
+      @include gl-focus;
+      position: relative;
+      z-index: 1;
+      background: $white;
+
+      &:hover {
+        background: $gray-50;
+      }
+    }
+  }
+
+  // Sticky header
+  &--sticky-header thead tr {
+    position: sticky;
+    top: -1px;
+    background: $white;
+    box-shadow: inset 0 -1px 0 $gray-100;
+  }
+
+  .table-primary,
+  .table-primary:hover {
+    > td {
+      @include gl-bg-blue-50;
+    }
+  }
+
+  caption {
+    @include gl-pt-2;
+  }
+
+  @mixin gl-tmp-stacked-override {
+    tbody > tr {
+      &::after {
+        content: '';
+        @include gl-h-6;
+        @include gl-w-full;
+        @include gl-display-block;
+      }
+
+      > td[data-label] {
+        @include gl-border-l-1;
+        @include gl-border-r-1;
+        @include gl-border-l-solid;
+        @include gl-border-r-solid;
+
+        &::before {
+          @include gl-text-left;
+        }
+
+        &:first-child {
+          @include gl-border-t-solid;
+          @include gl-border-t-1;
+        }
+
+        &:not(:first-child) {
+          @include gl-border-t-none;
+        }
+      }
+
+      div {
+        @include gl-text-right;
+        @include gl-overflow-wrap-break;
+      }
+    }
+  }
+
+  $stacked-table-breakpoints: (
+    'sm': 'xs',
+    'md': 'sm',
+    'lg': 'md',
+    'xl': 'lg',
+  );
+
+  &.b-table {
+    &.b-table-stacked {
+      @include gl-tmp-stacked-override();
+    }
+
+    @each $class, $mq in $stacked-table-breakpoints {
+      &.b-table-stacked-#{$class} {
+        @include media-breakpoint-down(#{$mq}) {
+          @include gl-tmp-stacked-override();
+        }
+      }
+    }
+  }
+
+  &.table-hover tbody tr:hover,
+  &.table-hover td.table-secondary:hover {
+    background-color: $gray-10;
+  }
+
+  thead th:hover {
+    background-color: transparent !important;
+
+    [name='sort-icon'] {
+      display: flex !important;
+    }
+  }
+}
+
+.table.b-table > thead > tr > th,
+.table.b-table > tfoot > tr > th {
+  background-image: none !important;
+}
+
+.table.b-table > thead > tr > [aria-sort]:not(.b-table-sort-icon-left),
+.table.b-table > tfoot > tr > [aria-sort]:not(.b-table-sort-icon-left) {
+  padding-right: 1rem;
+}

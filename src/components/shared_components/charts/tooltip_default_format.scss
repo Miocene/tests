@@ -1,0 +1,18 @@
+.gl-charts-tooltip-default-format-series {
+  @include gl-display-flex;
+  @include gl-justify-content-space-between;
+
+  &-label,
+  &-value {
+    @include gl-font-sm;
+  }
+
+  &-label {
+    @include gl-line-height-normal;
+    @include gl-mr-7;
+  }
+
+  &-value {
+    @include gl-font-weight-bold;
+  }
+}

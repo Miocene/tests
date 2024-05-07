@@ -1,0 +1,23 @@
+.gl-series-label-container {
+  @include gl-display-flex;
+  @include gl-font-base;
+  @include gl-overflow-hidden;
+  @include gl-overflow-wrap-break;
+}
+
+.gl-series-label-color {
+  @include gl-flex-shrink-0;
+  @include gl-mr-3;
+
+  svg {
+    @include gl-display-block;
+  }
+}
+
+.gl-series-label-text {
+  // In case there are no spaces in the series label -
+  // as there are quite a few possible cases where
+  // Prometheus queries return long labels with no spaces.
+  @include gl-overflow-hidden;
+  @include gl-overflow-wrap-break;
+}

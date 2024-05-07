@@ -1,0 +1,69 @@
+/*
+This is a temporary measure to ensure custom select styles are not affected by our
+lack of an autoprefixer tool for compiling bootstrap.
+
+TODO: Remove once bootstrap is included in GitLab UI or we include an autoprefixer
+on gitlab
+See: https://gitlab.com/gitlab-org/gitlab/issues/30055
+*/
+
+/* stylelint-disable property-no-vendor-prefix */
+.gl-form-select {
+  @include gl-font-base;
+  @include gl-font-regular;
+  @include gl-text-gray-900;
+  @include gl-opacity-10;
+  @include gl-line-height-normal;
+  @include gl-py-3;
+  @include gl-pl-4;
+  padding-right: $gl-spacing-scale-2 + $gl-spacing-scale-6;
+  @include gl-h-auto;
+  @include gl-inset-border-1-gray-400;
+  @include gl-border-none;
+  appearance: none;
+  @include gl-text-truncate;
+  @include gl-bg-no-repeat;
+  background-image: url($gl-icon-select-chevron-down);
+
+  &:focus,
+  &:focus:active {
+    @include gl-focus($color: $gray-900, $important: true);
+  }
+
+  &:disabled {
+    @include gl-bg-gray-10;
+    @include gl-inset-border-1-gray-100;
+    @include gl-text-gray-500;
+    @include gl-cursor-not-allowed;
+  }
+
+  &.is-invalid:not(:disabled) {
+    @include gl-inset-border-1-red-400;
+
+    &:focus {
+      @include gl-focus($color: $red-500, $important: true);
+    }
+
+    &:hover {
+      @include gl-inset-border-1-red-500;
+    }
+  }
+}
+
+@each $name, $size in $gl-form-input-sizes {
+  .gl-form-select-#{$name} {
+    max-width: $size;
+  }
+
+  @each $breakpointName, $breakpointSize in $gl-form-input-sizes {
+    @if $breakpointName != xs {
+      .gl-#{$breakpointName}-form-select-#{$name} {
+        @include gl-media-breakpoint-up($breakpointName) {
+          max-width: $size;
+        }
+      }
+    }
+  }
+}
+
+/* stylelint-enable property-no-vendor-prefix */

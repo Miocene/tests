@@ -1,0 +1,45 @@
+.gl-tooltip {
+  @include gl-font-sm;
+  @include gl-p-2;
+
+  .tooltip-inner {
+    @include gl-rounded-base;
+    @include gl-line-height-normal;
+    @include gl-font-weight-normal;
+    @include gl-py-3;
+    @include gl-px-4;
+  }
+
+  .arrow {
+    @include gl-h-3;
+    @include gl-w-2;
+
+    &::before {
+      @include gl-border-4;
+    }
+  }
+}
+
+.gl-tooltip.bs-tooltip-top,
+.gl-tooltip.bs-tooltip-bottom {
+  .arrow {
+    @include gl-w-3;
+    @include gl-h-2;
+  }
+}
+
+.gl-tooltip.bs-tooltip-top .arrow::before {
+  @include gl-border-b-0;
+}
+
+.gl-tooltip.bs-tooltip-right .arrow::before {
+  @include gl-border-l-0;
+}
+
+.gl-tooltip.bs-tooltip-bottom .arrow::before {
+  @include gl-border-t-0;
+}
+
+.gl-tooltip.bs-tooltip-left .arrow::before {
+  @include gl-border-r-0;
+}

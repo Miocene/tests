@@ -1,0 +1,40 @@
+.gl-card {
+  @include gl-bg-white;
+  @include gl-border-solid;
+  @include gl-display-flex;
+  @include gl-flex-direction-column;
+  @include gl-overflow-wrap-break;
+  position: relative;
+  @include gl-rounded-base;
+  @include gl-font-base;
+}
+
+.gl-card,
+.gl-card-header,
+.gl-card-footer {
+  @include gl-border-1;
+  @include gl-border-gray-100;
+}
+
+.gl-card-header,
+.gl-card-body,
+.gl-card-footer {
+  @include gl-p-5;
+}
+
+.gl-card-header {
+  @include gl-border-b-solid;
+  border-top-left-radius: calc($gl-border-radius-base - $gl-border-size-1);
+  border-top-right-radius: calc($gl-border-radius-base - $gl-border-size-1);
+}
+
+.gl-card-footer {
+  @include gl-border-t-solid;
+  border-bottom-left-radius: calc($gl-border-radius-base - $gl-border-size-1);
+  border-bottom-right-radius: calc($gl-border-radius-base - $gl-border-size-1);
+}
+
+.gl-card-header,
+.gl-card-footer {
+  @include gl-bg-gray-10;
+}

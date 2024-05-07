@@ -1,0 +1,17 @@
+.gl-skeleton-loader-default-container {
+  width: 235px;
+}
+
+.gl-skeleton-loader {
+  stop {
+    @include gl-opacity-10;
+  }
+
+  .primary-stop {
+    @include gl-stop-color-gray-100;
+  }
+
+  .secondary-stop {
+    @include gl-stop-color-gray-50;
+  }
+}

@@ -1,0 +1,128 @@
+// variables
+$modal-body-height: 80px;
+$modal-body-line-height: 1.5;
+$modal-box-shadow: 0 4px 16px $t-gray-a-24;
+
+// mixins
+@mixin gl-tmp-modal-btn-group-ml {
+  margin-left: -1px;
+}
+
+body.modal-open {
+  @include gl-overflow-hidden;
+}
+
+.gl-modal {
+  .modal-dialog-scrollable {
+    @include media-breakpoint-up(sm) {
+      max-height: calc(100% - #{$gl-spacing-scale-11 * 2});
+    }
+  }
+
+  .modal-sm {
+    max-width: $gl-modal-small-width;
+  }
+
+  .modal-md {
+    max-width: $gl-modal-medium-width;
+  }
+
+  .modal-lg {
+    max-width: $gl-modal-large-width;
+  }
+
+  .modal-xl {
+    max-width: 98%;
+  }
+
+  .modal-content {
+    @include gl-rounded-base;
+    @include gl-border-0;
+    box-shadow: $modal-box-shadow;
+
+    > :first-child {
+      @include gl-rounded-top-left-base;
+      @include gl-rounded-top-right-base;
+    }
+
+    > :last-child {
+      @include gl-rounded-bottom-left-base;
+      @include gl-rounded-bottom-right-base;
+    }
+  }
+
+  .modal-header {
+    @include gl-bg-white;
+    @include gl-pb-3;
+    @include gl-border-none;
+
+    .modal-title {
+      @include gl-heading-scale-500;
+    }
+  }
+
+  .modal-body {
+    min-height: $modal-body-height;
+    line-height: $modal-body-line-height;
+    @include gl-bg-white;
+    position: relative;
+    @include gl-p-5;
+    @include gl-py-3;
+    @include gl-text-left;
+    @include gl-white-space-normal;
+    @include gl-font-base;
+    @include gl-line-height-20;
+  }
+
+  .modal-footer {
+    @include gl-display-flex;
+    @include gl-flex-direction-row;
+    @include gl-p-5;
+    @include gl-pt-3;
+    @include gl-border-none;
+
+    .btn {
+      @include gl-m-0;
+    }
+
+    .btn + .btn:not(.dropdown-toggle-split),
+    .btn + .btn-group,
+    .btn-group + .btn {
+      @include gl-ml-3;
+    }
+
+    .btn-group .btn + .btn {
+      @include gl-tmp-modal-btn-group-ml;
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include gl-flex-direction-column;
+
+      .btn + .btn:not(.dropdown-toggle-split),
+      .btn + .btn-group,
+      .btn-group + .btn {
+        @include gl-ml-0;
+        @include gl-mt-3;
+      }
+
+      .btn-group .btn + .btn {
+        @include gl-tmp-modal-btn-group-ml;
+        @include gl-mt-0;
+      }
+    }
+  }
+
+  .modal-backdrop {
+    @include gl-opacity-5;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-dialog {
+      @include gl-mx-auto;
+      @include gl-my-0;
+      @include gl-display-flex;
+      @include gl-align-items-center;
+      min-height: calc(100% - 1rem);
+    }
+  }
+}

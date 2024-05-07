@@ -1,0 +1,17 @@
+.gl-single-stat {
+  @include gl-line-height-1;
+
+  &:hover[tabindex='0'] {
+    @include gl-bg-gray-50;
+    @include gl-rounded-base;
+  }
+
+  .gl-single-stat-number {
+    font-size: map-get($gl-font-sizes, 700);
+  }
+
+  .gl-single-stat-content .gl-badge {
+    position: relative;
+    top: -0.125em;
+  }
+}

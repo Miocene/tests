@@ -1,0 +1,22 @@
+@mixin gl-tmp-dropdown-divider-style {
+  @include gl-overflow-hidden;
+  @include gl-h-0;
+  @include gl-my-2;
+  @include gl-mx-0;
+  @include gl-p-0;
+  @include gl-border-t-1;
+  @include gl-border-t-solid;
+  @include gl-border-t-gray-200;
+}
+
+/* Styling when the component is used on its own */
+.gl-dropdown-divider {
+  @include gl-tmp-dropdown-divider-style;
+}
+
+/* Styling to override the vue-bootstrap CSS included in GitLab CSS */
+.gl-dropdown {
+  .gl-dropdown-divider {
+    @include gl-tmp-dropdown-divider-style;
+  }
+}

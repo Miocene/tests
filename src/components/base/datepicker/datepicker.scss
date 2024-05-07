@@ -1,0 +1,141 @@
+// pikaday colors override
+$pd-text-color: $gray-900;
+$pd-title-color: $gray-900;
+$pd-title-bg: $white;
+$pd-picker-bg: $white;
+$pd-picker-border: $border-color;
+$pd-picker-border-bottom: $border-color;
+$pd-picker-shadow: rgba(0, 0, 0, 0.5);
+$pd-th-color: $gray-500;
+$pd-day-color: $gray-900;
+$pd-day-bg: transparent;
+$pd-day-hover-color: $gray-500;
+$pd-day-hover-bg: $gray-50;
+$pd-day-today-color: $gray-900;
+$pd-day-selected-color: $gray-50;
+$pd-day-selected-bg: $blue-500;
+$pd-day-selected-shadow: $blue-500;
+$pd-day-disabled-color: $gray-500;
+$pd-week-color: $gray-500;
+
+@import 'pikaday/scss/pikaday';
+
+.gl-datepicker-actions {
+  @include gl-font-sm;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  @include gl-display-flex;
+  @include gl-justify-content-center;
+  @include gl-align-items-center;
+  @include gl-pointer-events-none;
+  @include gl-px-2;
+
+  .gl-button.gl-button {
+    border-radius: 0.0075rem;
+  }
+}
+
+.gl-datepicker-theme {
+  @include gl-font-regular;
+  @include gl-border-none;
+  @include gl-rounded-base;
+  @include gl-mt-3;
+
+  &.is-bound {
+    @include gl-shadow;
+  }
+
+  .pika-lendar {
+    @include gl-m-0;
+    @include gl-pt-5;
+    @include gl-px-3;
+    @include gl-pb-3;
+    @include gl-inset-border-1-gray-100;
+    @include gl-rounded-base;
+  }
+
+  .pika-title {
+    @include gl-line-height-normal;
+    @include gl-mb-5;
+    @include gl-h-5;
+  }
+
+  .pika-next,
+  .pika-prev {
+    @include gl-bg-center;
+    @include gl-bg-no-repeat;
+    @include gl-bg-size-100p;
+    @include gl-w-5;
+    @include gl-h-5;
+
+    &:hover {
+      @include gl-rounded-small;
+      @include gl-bg-gray-50;
+    }
+
+    &.is-disabled {
+      @include gl-cursor-not-allowed;
+    }
+  }
+
+  .pika-next {
+    @include gl-bg-chevron-right;
+  }
+
+  .pika-prev {
+    @include gl-bg-chevron-left;
+  }
+
+  .pika-label {
+    @include gl-font-base;
+    @include gl-py-0;
+
+    &:hover {
+      @include gl-rounded-small;
+      @include gl-bg-gray-50;
+    }
+  }
+
+  .pika-select {
+    top: 0;
+    @include gl-h-5;
+  }
+
+  th {
+    @include gl-pb-3;
+    @include gl-font-weight-bold;
+    @include gl-line-height-normal;
+  }
+
+  abbr[title] {
+    @include gl-text-decoration-none;
+    @include gl-cursor-default;
+  }
+
+  .pika-button {
+    @include gl-shadow-none;
+    @include gl-rounded-base;
+    @include gl-py-3;
+    @include gl-text-center;
+    @include gl-line-height-normal;
+    @include gl-w-7;
+    @include gl-font-base;
+
+    &.is-past-date {
+      @include gl-text-gray-400;
+    }
+  }
+
+  .is-today > .pika-button {
+    @include gl-font-weight-bold;
+    @include gl-text-gray-900;
+  }
+
+  .is-selected > .pika-button {
+    @include gl-bg-blue-500;
+    @include gl-font-weight-normal;
+    @include gl-text-white;
+  }
+}

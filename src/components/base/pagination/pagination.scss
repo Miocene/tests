@@ -1,0 +1,86 @@
+.gl-pagination {
+  @include gl-font-base;
+
+  a {
+    @include gl-text-gray-900;
+  }
+
+  .page-link {
+    @include gl-border-gray-200;
+    @include gl-line-height-normal;
+    @include gl-px-4;
+    @include gl-py-3;
+
+    &.prev-page-item,
+    &.next-page-item {
+      @include gl-px-3;
+    }
+
+    &:not(.active):hover {
+      @include gl-text-gray-900;
+      box-shadow: inset 0 0 0 1px $gray-400;
+      border-color: $gray-400;
+      background: $gray-50;
+      @include gl-z-index-1;
+    }
+
+    &:not(.active):focus {
+      @include gl-bg-gray-50;
+    }
+
+    &:not(.active):active,
+    &:not(.active).active {
+      @include gl-bg-gray-100;
+    }
+
+    &:not(.active):focus,
+    &:not(.active):active,
+    &:not(.active).active {
+      @include gl-focus();
+    }
+
+    &,
+    &:active {
+      @include gl-text-decoration-none;
+    }
+  }
+
+  .page-item {
+    &:not(.disabled) a.active {
+      @include gl-bg-blue-500;
+      @include gl-border-blue-500;
+      @include gl-text-white;
+      @include gl-z-index-2;
+      @include gl-shadow-none;
+
+      &:focus {
+        @include gl-focus();
+      }
+    }
+
+    &.disabled .page-link {
+      @include gl-bg-gray-10;
+      @include gl-border-gray-200;
+      @include gl-text-gray-500;
+    }
+  }
+
+  .prev-page-item,
+  .next-page-item {
+    .gl-icon {
+      vertical-align: bottom;
+    }
+  }
+}
+
+// stylelint-disable-next-line @gitlab/no-gl-media-breakpoint-down
+@include gl-media-breakpoint-down(sm) {
+  .gl-pagination {
+    .prev-page-item,
+    .next-page-item {
+      span {
+        display: none;
+      }
+    }
+  }
+}

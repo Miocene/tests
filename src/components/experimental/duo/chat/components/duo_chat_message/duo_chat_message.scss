@@ -1,0 +1,47 @@
+.duo-chat-message {
+  max-width: 90%;
+  position: relative;
+
+  code {
+    @include gl-bg-gray-100;
+  }
+
+  pre.code {
+    @include gl-bg-white;
+  }
+
+  pre code {
+    @include gl-font-sm;
+    @include gl-line-height-1;
+    @include gl-bg-transparent;
+    white-space: inherit;
+  }
+
+  p:last-of-type {
+    @include gl-mb-0;
+  }
+
+  copy-code {
+    position: absolute;
+    @include gl-transition-medium;
+    @include gl-opacity-0;
+    right: $gl-spacing-scale-4;
+    top: $gl-spacing-scale-3;
+  }
+
+  .js-markdown-code.markdown-code-block:hover {
+    copy-code,
+    copy-code:focus-within {
+      @include gl-opacity-10;
+    }
+  }
+
+  .has-error {
+    margin-left: $gl-spacing-scale-6;
+  }
+
+  .error-icon {
+    top: 14px;
+    position: absolute;
+  }
+}
