@@ -1,0 +1,5 @@
+const TYPE_BANNER = 'banner';
+const TYPE_NOTIFICATION = 'notification';
+const TYPE_LIST = [TYPE_BANNER, TYPE_NOTIFICATION];
+
+export { TYPE_BANNER, TYPE_LIST, TYPE_NOTIFICATION };

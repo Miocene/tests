@@ -1,0 +1,7 @@
+|  | 150ms | 8ms | 200ms | 250ms | 0ms |
+| --- | --- | --- | --- | --- | --- |
+| 150ms | – | [Exp 12](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-12&viewMode=story) | [Exp 13](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-13&viewMode=story) | [Exp 14](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-14&viewMode=story) | [Exp 15](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-15&viewMode=story) |
+| 8ms | – | – | [Exp 23](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-23&viewMode=story) | [Exp 24](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-24&viewMode=story) | [Exp 25](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-25&viewMode=story) |
+| 200ms | – | – | – | [Exp 34](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-34&viewMode=story) | [Exp 35](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-35&viewMode=story) |
+| 250ms | – | – | – | – | [Exp 45](https://miocene.github.io/tests/storybook/iframe.html?id=exp-duration--exp-45&viewMode=story) |
+| 0ms | - | - | - | - | - |

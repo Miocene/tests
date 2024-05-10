@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script>
+// import { ref } from 'vue'
 import { BButton } from 'bootstrap-vue';
 import {
   buttonCategoryOptions,
@@ -12,6 +13,8 @@ import { SafeLinkMixin } from '../../mixins/safe_link_mixin';
 import GlIcon from '../icon/icon.vue';
 import GlLoadingIcon from '../loading_icon/loading_icon.vue';
 
+// const showWave = ref(false)
+
 export default {
   name: 'GlButton',
   components: {
@@ -20,6 +23,11 @@ export default {
     GlLoadingIcon,
   },
   mixins: [SafeLinkMixin],
+  data() {
+    return {
+      isWaveVisible: false,
+    };
+  },
   props: {
     category: {
       type: String,
@@ -119,6 +127,14 @@ export default {
       return !this.label && this.block;
     },
   },
+  methods: {
+    showWaveOnClick() {
+      this.isWaveVisible = true;
+      setTimeout(() => {
+        this.isWaveVisible = false;
+      }, 500);
+    }
+  },
   mounted() {
     // eslint-disable-next-line @gitlab/vue-prefer-dollar-scopedslots
     if (!this.$slots.default && !this.$attrs['aria-label'] && !this.$props.label) {
@@ -142,10 +158,12 @@ export default {
     :disabled="isButtonDisabled"
     :class="buttonClasses"
     v-on="$listeners"
+    @click="showWaveOnClick"
   >
     <gl-loading-icon v-if="loading" inline class="gl-button-icon gl-button-loading-indicator" />
     <gl-icon v-if="hasIcon && !(hasIconOnly && loading)" class="gl-button-icon" :name="icon" />
     <slot name="emoji"></slot>
     <span v-if="!hasIconOnly" :class="buttonTextClasses" class="gl-button-text"><slot></slot></span>
+    <span v-if="isWaveVisible" class="gl-button-wave"></span>
   </component>
 </template>

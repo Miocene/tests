@@ -1,0 +1,249 @@
+body { 
+    margin: 0 !important;
+    padding: 2.5rem !important;
+ }
+
+.t-grid {
+    display: grid;
+    grid-template-columns: repeat(2, min(50%, 520px));
+    justify-content: center;
+    gap: 2rem;
+}
+
+.gl-card-body {
+    padding: 2rem;
+}
+
+.gl-form-group {
+    margin-bottom: 1.3rem;
+}
+
+.gl-form-group:last-child {
+    margin-bottom: 0;
+    margin-top: -0.5rem;
+}
+
+.gl-form-group .col-form-label > .label-description {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.3em;
+}
+
+.gl-form-checkbox {
+    margin-top: 1rem;
+}
+
+.custom-control-label {
+    margin-bottom: 0 !important;
+    line-height: 1.3em;
+}
+
+h1 {
+    font-size: 1.53125rem !important;
+    margin-bottom: 1.15rem;
+}
+
+.t-grid .gl-pagination {
+    margin-top: 1.25rem;
+}
+.t-grid .pagination {
+    justify-content: center;
+}
+
+.t-grid .btn-group {
+    width: 100%;
+}
+
+
+
+/* EXPERIMENT 1 */
+/* GL, Bootstrap */
+/* 0.15s ease-in-out */
+.t-form-1 {
+}
+
+/* EXPERIMENT 3 */
+/* JM, Ant */
+/* 0.2s cubic-bezier(0.22, 0.61, 0.36, 1) */
+.t-form-3 {
+    --animation: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    --animation-list: 0.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    --animation-active: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+
+
+
+
+.t-form-3 .form-control {
+    transition: border-color var(--animation), 
+                box-shadow var(--animation);
+}
+.t-form-3 .btn {
+    transition: color var(--animation), 
+                background-color var(--animation), 
+                border-color var(--animation), 
+                box-shadow var(--animation);
+}
+.t-form-3 .gl-new-dropdown-item-content {
+    transition: color var(--animation-list), 
+                background-color var(--animation-list), 
+                border-color var(--animation-list), 
+                box-shadow var(--animation-list);
+}
+.t-form-3 .custom-control-label::before,
+.t-form-3 .custom-file-label,
+.t-form-3 .custom-select {
+    transition: background-color var(--animation),
+                border-color var(--animation), 
+                box-shadow var(--animation);
+}
+
+.t-form-3 .gl-form-checkbox.custom-control .custom-control-input:not(:disabled) ~ .custom-control-label::before {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 0em #0b5cad, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.t-form-3 .gl-form-checkbox.custom-control .custom-control-input:not(:disabled):not(:checked):focus ~ .custom-control-label::before {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 0em #0b5cad, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+.t-form-3 .gl-form-checkbox.custom-control .custom-control-input:not(:disabled):checked ~ .custom-control-label::before {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1em #0b5cad, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.t-form-3 .gl-form-checkbox.custom-control .custom-control-input:not(:disabled):focus:checked ~ .custom-control-label::before {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 1em #0b5cad, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+
+.t-form-3 .gl-form-input,
+.t-form-3 .gl-form-input.form-control {
+    box-shadow: inset 0 0 0 1px #89888d, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+    /* box-shadow: inset 0 0 0 1px #89888d; */
+}
+.t-form-3 .gl-form-input:hover,
+.t-form-3 .gl-form-input.form-control:hover {
+    box-shadow: inset 0 0 0 1px #333238, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+    /* box-shadow: inset 0 0 0 1px #333238; */
+}
+.t-form-3 .gl-form-input:focus,
+.t-form-3 .gl-form-input:hover:focus,
+.t-form-3 .gl-form-input.form-control:hover:focus,
+.t-form-3 .gl-form-input.form-control:focus {
+    box-shadow: inset 0 0 0 1px #428fdc, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+    /* box-shadow: inset 0 0 0 1px #428fdc; */
+}
+
+
+
+.t-form-3 .gl-button.gl-button.btn-default:hover, 
+.t-form-3 .gl-button.gl-button.btn-dashed:hover, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-default:hover, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-dashed:hover {
+    box-shadow: inset 0 0 0 1px #89888d, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.t-form-3 .gl-button.gl-button.btn-default:focus, 
+.t-form-3 .gl-button.gl-button.btn-dashed:focus, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-default:focus, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-dashed:focus {
+    box-shadow: inset 0 0 0 1px #89888d, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+.t-form-3 .gl-button.gl-button.btn-confirm:hover, 
+.t-form-3 .gl-button.gl-button.btn-info:hover, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-confirm:hover, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-info:hover {
+    box-shadow: inset 0 0 0 1px #064787, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.t-form-3 .gl-button.gl-button.btn-confirm:focus, 
+.t-form-3 .gl-button.gl-button.btn-info:focus, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-confirm:focus, 
+.t-form-3 .gl-button.gl-button.btn-block.btn-info:focus {
+    box-shadow: inset 0 0 0 1px #064787, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+
+.t-form-3 .gl-button:not(.gl-new-dropdown-toggle) {
+    position: relative;
+}
+.t-form-3 .gl-button:not(.gl-new-dropdown-toggle) .gl-button-wave {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: inherit;
+    animation: t3-btn-active var(--animation-active);
+}
+.t-form-3 .btn-group .gl-button .gl-button-wave {
+    animation: none;
+}
+@keyframes t3-btn-active {
+    0% { box-shadow: 0 0 0 0px #428fdc; opacity: 0.3; }
+    60% { box-shadow: 0 0 0 6px #428fdc; opacity: 0.3; }
+    100% { box-shadow: 0 0 0 8px #428fdc; opacity: 0; }
+}
+
+
+.t-form-3 .gl-link:not(.gl-button, .page-link) {
+    text-decoration: 2px underline rgb(66 143 220 / 0%);
+    border-radius: 2px;
+    transition: text-decoration var(--animation-list),
+                outline var(--animation-list);
+}
+.t-form-3 .gl-link:not(.gl-button, .page-link):hover,
+.t-form-3 .gl-link:not(.gl-button, .page-link):active {
+    text-decoration: 2px underline rgb(66 143 220 / 50%) !important;
+}
+
+
+.t-form-3 .gl-pagination .page-link {
+    transition: border-color var(--animation),
+                color var(--animation),
+                background-color var(--animation),
+                box-shadow var(--animation);
+}
+.t-form-3 .gl-pagination .page-link:not(.active, :focus):hover {
+    box-shadow: none;
+}
+
+
+
+.t-form-3 .btn-group .gl-button:focus {
+    z-index: 2;
+}
+
+
+
+.t-form-3 .gl-tab-nav-item {
+    position: relative;
+    border-radius: 2px;
+    overflow: visible;
+}
+.t-form-3 .gl-tab-nav-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform-origin: bottom center;
+    scale: 1 0;
+    transition: scale var(--animation),
+                background-color var(--animation);
+}
+.t-form-3 .gl-tab-nav-item:hover:before {
+    background-color: #bfbfc3;
+    scale: 1 1;
+}
+.t-form-3 .gl-tab-nav-item-active,
+.t-form-3 .gl-tab-nav-item:hover:not(.gl-tab-nav-item-active) {
+    box-shadow: none;
+}
+.t-form-3 .gl-tab-nav-item-active::before,
+.t-form-3 .gl-tab-nav-item-active:hover::before {
+    background-color: #1f75cb;
+    scale: 1 1;
+}
+.t-form-3 .gl-tab-nav-item:focus {
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+    overflow: hidden;
+    z-index: 1;
+}

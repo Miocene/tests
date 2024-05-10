@@ -1,0 +1,1 @@
+{"version":3,"sources":["tailwind.css"],"names":[],"mappings":"AAAA,UAAA,cAAmB,CAAnB,eAAA,2BAAmB,CAAnB,aAAA,iBAAmB,CAAnB,aAAA,iBAAmB,CAAnB,aAAA,QAAmB,CAAnB,aAAA,aAAmB,CAAnB,WAAA,MAAmB,CAAnB,YAAA,YAAmB,CAAnB,gBAAA,WAAmB","file":"tailwind.css","sourcesContent":["@tailwind utilities;\n"]}

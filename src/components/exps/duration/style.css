@@ -1,0 +1,143 @@
+body { 
+    margin: 0 !important;
+    padding: 2.5rem !important;
+ }
+
+.e-grid {
+    display: grid;
+    grid-template-columns: repeat(2, min(50%, 520px));
+    justify-content: center;
+    gap: 2rem;
+}
+
+.gl-card-body {
+    padding: 2rem;
+}
+
+.gl-form-group {
+    margin-bottom: 1.3rem;
+}
+
+.gl-form-group:last-child {
+    margin-bottom: 0;
+    margin-top: -0.5rem;
+}
+
+.gl-form-group .col-form-label > .label-description {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.3em;
+}
+
+.gl-form-checkbox {
+    margin-top: 1rem;
+}
+
+.custom-control-label {
+    margin-bottom: 0 !important;
+    line-height: 1.3em;
+}
+
+h1 {
+    font-size: 1.53125rem !important;
+    margin-bottom: 1.15rem;
+}
+
+
+
+/* EXPERIMENT 1 */
+/* GL, Bootstrap */
+/* 0.15s ease-in-out */
+.e-form-1 {
+    --animation: 0.15s ease-in-out;
+}
+
+/* EXPERIMENT 2 */
+/* GH */
+/* 0.08s cubic-bezier(0.65,0,0.35,1) */
+.e-form-2 {
+    --animation: 0.08s cubic-bezier(0.65,0,0.35,1);
+}
+
+/* EXPERIMENT 3 */
+/* JM, Ant */
+/* 0.2s cubic-bezier(0.22, 0.61, 0.36, 1) */
+.e-form-3 {
+    --animation: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* EXPERIMENT 4 */
+/* MT */
+/* 0.25s cubic-bezier(0.4, 0, 0.2, 1) */
+.e-form-4 {
+    --animation: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* EXPERIMENT 5 */
+/* discrete */
+/* 0s linear */
+.e-form-5 {
+    --animation: 0s linear;
+}
+
+
+
+
+
+
+.e-grid .form-control {
+    transition: border-color var(--animation), 
+                box-shadow var(--animation);
+}
+.e-grid .btn {
+    transition: color var(--animation), 
+                background-color var(--animation), 
+                border-color var(--animation), 
+                box-shadow var(--animation);
+}
+.e-grid .gl-new-dropdown-item-content {
+    transition: color var(--animation), 
+                background-color var(--animation), 
+                border-color var(--animation), 
+                box-shadow var(--animation);
+}
+.e-grid .custom-control-label::before,
+.e-grid .custom-file-label,
+.e-grid .custom-select {
+    transition: background-color var(--animation),
+                border-color var(--animation), 
+                box-shadow var(--animation);
+}
+
+.e-grid .gl-form-input,
+.e-grid .gl-form-input.form-control {
+    box-shadow: inset 0 0 0 1px #89888d, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.e-grid .gl-form-input:hover,
+.e-grid .gl-form-input.form-control:hover {
+    box-shadow: inset 0 0 0 1px #333238, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.e-grid .gl-form-input:focus,
+.e-grid .gl-form-input.form-control:focus {
+    box-shadow: inset 0 0 0 1px #333238, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+
+.e-grid .gl-button.gl-button.btn-default:hover,
+.e-grid .gl-button.gl-button.btn-dashed:hover,
+.e-grid .gl-button.gl-button.btn-block.btn-default:hover,
+.e-grid .gl-button.gl-button.btn-block.btn-dashed:hover {
+    box-shadow: inset 0 0 0 1px #89888d, 0 0 0 0px #fff, 0 0 0 0px #428fdc;
+}
+.e-grid .gl-button.gl-button.btn-default:focus,
+.e-grid .gl-button.gl-button.btn-dashed:focus,
+.e-grid .gl-button.gl-button.btn-block.btn-default:focus,
+.e-grid .gl-button.gl-button.btn-block.btn-dashed:focus {
+    box-shadow: inset 0 0 0 1px #333238, 0 0 0 1px #fff, 0 0 0 3px #428fdc;
+}
+
+.e-grid .gl-button.gl-button.btn-confirm:hover,
+.e-grid .gl-button.gl-button.btn-info:hover,
+.e-grid .gl-button.gl-button.btn-block.btn-confirm:hover,
+.e-grid .gl-button.gl-button.btn-block.btn-info:hover {
+    box-shadow: inset 0 0 0 1px #064787;
+}

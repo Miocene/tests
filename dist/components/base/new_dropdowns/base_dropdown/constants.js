@@ -1,0 +1,4 @@
+const FIXED_WIDTH_CLASS = 'gl-w-31!';
+const DEFAULT_OFFSET = 4;
+
+export { DEFAULT_OFFSET, FIXED_WIDTH_CLASS };

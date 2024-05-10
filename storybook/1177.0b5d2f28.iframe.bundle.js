@@ -1,0 +1,1 @@
+(globalThis.webpackChunk_gitlab_ui=globalThis.webpackChunk_gitlab_ui||[]).push([[1177],{"?6eb0":()=>{}}]);
