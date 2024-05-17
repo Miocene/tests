@@ -92,7 +92,11 @@ h1 {
                 border-color var(--animation-list), 
                 box-shadow var(--animation-list);
 }
-.t-form-3 .custom-control-label::before,
+.t-form-3 .custom-control-label::before {
+    transition: background-color var(--animation-list),
+                border-color var(--animation-list), 
+                box-shadow var(--animation-list);
+}
 .t-form-3 .custom-file-label,
 .t-form-3 .custom-select {
     transition: background-color var(--animation),
@@ -185,9 +189,8 @@ h1 {
     animation: none;
 }
 @keyframes t3-btn-active {
-    0% { box-shadow: 0 0 0 0px #428fdc; opacity: 0.3; }
-    60% { box-shadow: 0 0 0 6px #428fdc; opacity: 0.3; }
-    100% { box-shadow: 0 0 0 8px #428fdc; opacity: 0; }
+    from { box-shadow: 0 0 0 0px #428fdc; opacity: 1; }
+    to { box-shadow: 0 0 0 8px #428fdc; opacity: 0; }
 }
 
 
